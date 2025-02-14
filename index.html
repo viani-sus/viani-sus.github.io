@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Happy Valentine's Day!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* More romantic font */
+            background: linear-gradient(to bottom, #f8c8dc, #f06292); /* Gradient background */
+            color: #fff; /* White text */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white container */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+        }
+        h1 {
+            color: #fff;
+            font-size: 2.5em; /* Larger heading */
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em; /* Slightly larger paragraph text */
+            margin-bottom: 20px;
+            line-height: 1.5; /* Improved readability */
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px; /* Larger buttons */
+            background-color: #f06292; /* Deeper pink */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+        .button:hover {
+            background-color: #e91e63; /* Brighter pink on hover */
+        }
+        img {
+            max-width: 80%; /* Slightly smaller image */
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        #itinerary {
+            display: none;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for itinerary */
+            color: #f06292; /* Pink text for itinerary */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left; /* Left-align the itinerary text */
+        }
+        #itinerary h2 {
+            margin-bottom: 10px;
+        }
+        #itinerary ol {
+            list-style-type: none; /* Remove default bullet points */
+            padding-left: 20px;
+        }
+        #itinerary li {
+            margin-bottom: 10px;
+            position: relative; /* For adding heart icons */
+            padding-left: 30px; /* Space for the heart icons */
+        }
+        #itinerary li::before { /* Add heart icons */
+            content: "♥";
+            position: absolute;
+            left: 0;
+            color: #e91e63;
+        }
+        #noConfirmation {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+        }
+        #finalMessage {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            font-style: italic; /* Quirky italic text */
+            color: #f06292; /* Pink color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <img src="your-image.jpg" alt="Valentine's Image">
+        <p>Hey [Girlfriend's Name],</p>
+        <p>I've been thinking about you, and Valentine's Day is just around the corner.  I'd love to spend a special evening with you. Would you like to go out with me on [Date] to [Place/Activity]?</p>
+
+        <a class="button" href="#" id="yesButton">Yes!</a>
+        <a class="button" href="#" id="noButton">No, thank you.</a>
+
+        <div id="noConfirmation">
+            <p>Do you *really* want to say no?</p>
+            <a class="button" href="#" id="finalNoButton">Yes, I'm sure</a>
+        </div>
+
+        <div id="finalMessage">
+            <p>I think you meant to say YES! 😉</p> </div>
+
+        <div id="itinerary">
+            <h2>Perfect! Here's our romantic evening planned:</h2>
+            <ol>
+                <li>Enjoy delicious momos together</li>
+                <li>Get all dressed up and ready for a special night</li>
+                <li>A little pre-date fun</li>
+                <li>A romantic date night at "Seta"</li>
+                <li>Cuddle up and relax in our cozy room</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById("yesButton");
+        const noButton = document.getElementById("noButton");
+        const noConfirmation = document.getElementById("noConfirmation");
+        const finalNoButton = document.getElementById("finalNoButton");
+        const finalMessage = document.getElementById("finalMessage");
+        const itinerary = document.getElementById("itinerary");
+
+        yesButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            itinerary.style.display = "block";
+        });
+
+        noButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            noConfirmation.style.display = "block";
+        });
+
+        finalNoButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            noConfirmation.style.display = "none";
+            finalMessage.style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
